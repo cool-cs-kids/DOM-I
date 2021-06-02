@@ -139,3 +139,20 @@ const footerDiv = document.querySelector('footer');
 // console.log(footerDiv);
 const footerCopy = footerDiv.querySelector('p');
 footerCopy.textContent = siteContent.footer.copyright;
+
+navBar.forEach((a) => {
+  a.style.color = 'green';
+});
+
+const newLink = document.createElement('a');
+newLink.textContent = 'Blog';
+newLink.href = 'https://google.com';
+newLink.style.color = 'green';
+
+const beforeLink = document.createElement('a');
+beforeLink.textContent = 'HoloLive';
+beforeLink.href = 'https://youtube.com';
+beforeLink.style.color = 'green';
+
+document.querySelector('nav').appendChild(newLink);
+document.querySelector('nav').prepend(beforeLink);
