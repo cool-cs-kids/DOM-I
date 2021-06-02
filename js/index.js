@@ -99,4 +99,43 @@ const mainContentImg = document.querySelector('#middle-img');
 
 mainContentImg.src = siteContent['main-content']['middle-img-src'];
 
-const 
+// now we need to hit the bottom content: service, product, vision
+
+const bottomContent = document.querySelector('.bottom-content');
+// console.log(bottomContent);
+
+serviceContentH4 = bottomContent.querySelectorAll('.text-content h4')[0];
+// console.log(serviceContentH4);
+serviceContentH4.textContent = siteContent['main-content']['services-h4'];
+serviceContent = bottomContent.querySelectorAll('.text-content p')[0];
+serviceContent.textContent = siteContent['main-content']['services-content'];
+
+productContentH4 = bottomContent.querySelectorAll('.text-content h4')[1];
+productContentH4.textContent = siteContent['main-content']['product-h4'];
+productContent = bottomContent.querySelectorAll('.text-content p')[1];
+productContent.textContent = siteContent['main-content']['product-content'];
+
+visionContentH4 = bottomContent.querySelectorAll('.text-content h4')[2];
+visionContentH4.textContent = siteContent['main-content']['vision-h4'];
+visionContent = bottomContent.querySelectorAll('.text-content p')[2];
+visionContent.textContent = siteContent['main-content']['vision-content'];
+
+// change contact
+
+const contactDiv = document.querySelector('.contact');
+
+const contactDivH4 = contactDiv.querySelector('h4');
+contactDivH4.textContent = siteContent.contact['contact-h4'];
+
+const contactDivP = contactDiv.querySelectorAll('p');
+// console.log(contactDivP);
+
+contactDivP.forEach((p, index) => {
+  // console.log(Object.entries(siteContent.contact)[index + 1]);
+  p.textContent = Object.entries(siteContent.contact)[index + 1][1];
+});
+
+const footerDiv = document.querySelector('footer');
+// console.log(footerDiv);
+const footerCopy = footerDiv.querySelector('p');
+footerCopy.textContent = siteContent.footer.copyright;
