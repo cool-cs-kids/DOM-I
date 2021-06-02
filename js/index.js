@@ -60,8 +60,43 @@ navBar.forEach((a, index) => {
 // next, we need to add in the h1 text to the CTA, and also add the text to the button
 
 const ctaText = document.querySelector('.cta-text h1');
-console.log(ctaText);
+// console.log(ctaText);
 
 ctaText.textContent = siteContent.cta.h1;
 
 // next, we need to add text to the button!
+
+const ctaButton = document.querySelector('.cta-text button');
+// console.log(ctaButton);
+ctaButton.textContent = siteContent.cta.button;
+
+// next, we need to update the big picture next to the CTA
+const ctaBigPicture = document.querySelector('#cta-img');
+// console.log(ctaBigPicture);
+
+ctaBigPicture.src = siteContent.cta['img-src'];
+
+// next, we will target main-content, and target top-content (features and about)
+
+const topContent = document.querySelector('.top-content');
+
+// console.log(topContent);
+const featuresContentH4 = topContent.querySelector('.text-content h4');
+// console.log(featuresContent);
+featuresContentH4.textContent = siteContent['main-content']['features-h4'];
+const featuresContent = topContent.querySelector('.text-content p');
+featuresContent.textContent = siteContent['main-content']['features-content'];
+
+const aboutContentH4 = topContent.querySelectorAll('.text-content h4')[1];
+// console.log(aboutContentH4);
+aboutContentH4.textContent = siteContent['main-content']['about-h4'];
+const aboutContent = topContent.querySelectorAll('.text-content p')[1];
+// console.log(aboutContent);
+aboutContent.textContent = siteContent['main-content']['about-content'];
+
+const mainContentImg = document.querySelector('#middle-img');
+// console.log(mainContentImg);
+
+mainContentImg.src = siteContent['main-content']['middle-img-src'];
+
+const 
